@@ -4,11 +4,13 @@ build-lists: true
 ^ As some of you may know, I've been learning Haskell for the past 3 months. I'd like to share with the group what I've learned, sort of as a progress report.
 
 ---
-## Why
+## Why Haskell
 
-Who even uses it‽
+### Who even uses it‽
 
-^ Some of you may have heard of Haskell before. It began as a research language, but it is seeing some use in some industries and isn't only used in research
+^ Why haskell? Who even uses it?
+
+^ Most think of it as just a research language, but it does actually see some use in industry
 
 ---
 
@@ -19,7 +21,7 @@ Standard Chartered
 - 2.5m lines of Haskell
 - Used by engineers and traders alike to write code
 
-^ traditionally, Some of the bigger users are in Finance and ad tech. They generally are secretive, but Std Chartered has publically stated their use of Haskell
+^ Traditionally, some of the bigger users are in finance and ad tech. They generally are secretive, but Std Chartered has publically stated their use of Haskell
 
 ^ Has to be easy to use and safe
 
@@ -78,7 +80,8 @@ Maybe cut this slide. Don't need to go into detail, probably
 
 ---
 
-# What does it all mean??
+# What does it mean??
+# 🌈🌈
 
 ^ So...wdiam?
 
@@ -167,6 +170,8 @@ sayHello name = do
 
 ^ It sounds like a hassle, but it forces the developer to write better code
 
+^ Not representative of real haskell code
+
 ---
 
 # Haskell
@@ -180,6 +185,8 @@ sayHello i name =
 
 -- Some other code/function would deal with the IO
 ```
+
+^ This is more representative of typical haskell code
 
 ^ Interactions with the unpredictable outside world moves closer to the outer layers of the code, while isolating the rest of the code base
 
@@ -214,6 +221,8 @@ Development process ends up being:
 
 https://twitter.com/leothrix/status/672825545273565184
 
+^ Now that you have working code, it's probably a mess and you want to refactor it...
+
 ---
 # Refactoring
 
@@ -228,39 +237,41 @@ https://twitter.com/leothrix/status/672825545273565184
 
 - More testable code
 - Less things to test (especially vs. JS/Ruby/etc.)
-- State of the art tools (QuickCheck)
+- State of the art testing tools (QuickCheck)
 
 ^ Pure functions (due to separation of concerns) are aplenty, and easier to test
 
 ^ Type system helps enforce certain properties, so less tests needed
 
-^ State of the art in testing often come from languages like Haskell, such as QuickCheck which offers property-based testing. You write a function that describes a relationship between the input and output that must hold (example: sayHello), and it'll auto run 100s or 1000s of random test cases.
+^ State of the art testing tools often come from languages like Haskell. QuickCheck which offers property-based testing. You write a function that describes a relationship between the input and output that must hold (example: sayHello), and it'll run 100s or 1000s of random test cases.
 
 ---
-
+<!-- 
 # Tooling
 
----
+--- 
+-->
 # Hoogle/Hayoo/etc.
 
 ![inline](hoogle-name.png)
 
-^ not only search by function name
+^ not only search by function name, but if you know the shape of the function you're looking for
 
 ---
 # Hoogle/Hayoo/etc.
 
 ![inline](hoogle-type.png)
 
-^ so if you know the shape of function you're looking for...
+^ you can also type the type signature in
 
+<!-- 
 ---
 # REPL
 
 - Incremental development
 - Type inspection
 - Type holes (_)
-
+ -->
 ---
 # And more...
 
@@ -268,17 +279,27 @@ https://twitter.com/leothrix/status/672825545273565184
 - Learning curve
 - Speed
 - Parallelism (STM)
-- New abstractions
+- REPL
+
+---
+# Lots of libraries available
+
+- Web frameworks (Yesod, Snap, Spock, Scotty, ...)
+- JSON (Aeson)
+- Parsers (Parsec, Attoparsec, etc.)
+- More on Hackage, Haskell's package repository
 
 ---
 # How do I start?
 
-- haskellbook.com
-- CIS194
+- Haskell Programming from first principles (haskellbook.com)
+- CIS194 from UPenn (Spring '13) or openhaskell.com
 - #haskell/#haskell-beginners on freenode
 - Santa Monica Haskell meetup
 
 ^ If this all sounds interesting to you...
+
+^ and I think Haskell is a language worth learning even if you don't end up using it, because it can teach you some new higher level abstractions, which can apply anywhere, and make you a better programmer in general
 
 ---
 # Thanks!
