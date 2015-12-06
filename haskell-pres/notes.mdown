@@ -1,0 +1,105 @@
+As some of you may know, I've been learning Haskell for the past 3 months. I'd like to share with the group what I've learned, sort of as a progress report.
+
+# Why Haskell?
+
+Haskell began as a research language, but has been used in some areas where correctness matters, such as in Finance
+
+### Standard Chartered 
+
+2.5m lines of Haskell, with traders (non-software engineers) writing code with financial impact safely and effectively
+
+In the past year or two, Haskell has also been gaining some traction in the tech industry
+
+### FB's Atlas
+
+Rules engine that requires scale (1m req/s) and can load/unload rules without restarting server
+
+Ended up getting a 30% throughput increase on same hardware, thanks to GHC
+
+(originally FXL, their own thing)
+
+### Grasswire
+
+Tweets:
+
+@AustenAllred: Seriously, making the right decisions on tech has made Grasswire’s costs about 1/3 of what they would be
+
+https://twitter.com/AustenAllred/status/669257532356042752
+
+@AustenAllred: Building in Haskell and being remote lets Grasswire play some serious moneyball. Work with really sharp people, save $, build faster.
+
+https://twitter.com/AustenAllred/status/669259199675809792
+
+### Paul Graham's essay on using Lisp being a competitive advantage
+
+
+http://www.paulgraham.com/avg.html
+
+# So, what is Haskell?
+
+I hope those have got you at least a little interested. So what is Haskell, and what makes it so special?
+
+From wikipedia:
+
+> Haskell is a standardized, general-purpose purely functional
+programming language, with non-strict semantics and strong static
+typing.
+
+-- Wikipedia
+
+Unless you know PLs decently well, that probably doesn't mean much. I know it didn't to me until I started to seriously look at Haskell three months ago.
+
+The power of Haskell is its abstraction mechanism, which is the type system.
+
+In other languages, like Swift, types tell you what a function takes as input, and what comes out the other end. But it does not specify what can or cannot happen when the function in run.
+
+In fact, other than the types of input and output, it's implicitly implied that *anything* can happen when a function is run. It can increment a counter, update a database, etc.
+
+In Haskell, you are forced to encode any funny business in the type.
+
+Want to fetch a web page? Update a database entry? Read from a file? All those have to be encoded in the type.
+
+It sounds like a hassle, but it forces the developer to write better code, and brings interactions with the unpredictable outside world closer to the outer layers of the code, while isolating more of the code base, making more of the code purely functional. That means more predictable code, more easily testable code, and more maintainable code.
+
+### TDD == Type Driven Development
+
+There's a saying in Haskell: "If it compiles, it works"
+
+Development process ends up being:
+
+- Write the types
+- Write code until compiler stops complaining
+- ...
+- Profit!
+
+https://twitter.com/leothrix/status/672825545273565184
+"Still amazed at the “write part of the solution -> fix compile errors -> working code” phenomenon in Haskell"
+
+### Refactoring
+
+Because separation of concerns is forced on you via the type system, refactoring is a breeze.
+
+If you already have working code, "If it compiles, it works" applies even more.
+
+### Testing
+
+Strong and static types means less tests compared to languages like Ruby, JS, and Python
+
+The type system can ensure some properties hold, or your code will not compile
+
+Pure functions are easier to test, since you don't need to set up or teardown state before testing.
+
+State of the art testing often come from languages like Haskell. QuickCheck (property-based testing) is such an example. You write code expressing an invariant (a property that should hold for a function based on the input), and the QuickCheck will generate hundreds or thousands of test cases for each.
+
+### Code reuse
+
+High levels of abstraction give us high levels of reuse.
+
+Patterns can be abstracted into general libraries (lens, pipes, conduit, etc.), and can be used everywhere
+
+# Message
+
+So, I hope at least some of you will consider exploring the world of Haskell. Maybe 
+
+# If I'm interested, where do I start?
+
